@@ -21,19 +21,23 @@ const livros = [
     }
 ]
 
-const divBiblioteca = document.querySelector('#biblioteca')
-divBiblioteca.innerHTML = ''
+function carregarLivros(livros) {
 
-livros.forEach(livro =>{
-    const estruturaHtml = `
-    <h2>${livro.titulo}</h2>
-    <ul></ul>
+    const divBiblioteca = document.querySelector('#biblioteca')
+    divBiblioteca.innerHTML = ''
+    
+    livros.forEach(livro =>{
+        const estruturaHtml = `
+        <h2>${livro.titulo}</h2>
+        <ul></ul>
         <li>Autor: ${livro.autor}</li>
         <li>Ano de Publicação: ${livro.anoPublicacao}</li>
         <li>
-            <img src="${livro.capa}" alt="">
-            
+        <img src="${livro.capa}" alt="">
+        
         </li>
-    <hr>`
-    divBiblioteca.innerHTML += estruturaHtml
-})
+        <hr>`
+        divBiblioteca.innerHTML += estruturaHtml
+    })
+}
+carregarLivros(livros)
